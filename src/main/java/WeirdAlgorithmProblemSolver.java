@@ -1,6 +1,10 @@
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 
 public class WeirdAlgorithmProblemSolver {
+    private static final BufferedReader READER = new BufferedReader(new InputStreamReader(System.in));
+
     public static void main(String[] args) throws IOException {
         var input = readLong();
         var builder = new StringBuilder();
@@ -17,15 +21,6 @@ public class WeirdAlgorithmProblemSolver {
     }
 
     private static long readLong() throws IOException {
-        long ret = 0;
-        boolean dig = false;
-        for (int c = 0; (c = System.in.read()) != -1; ) {
-            if (c >= '0' && c <= '9') {
-                dig = true;
-                ret = ret * 10 + (c - '0');
-            } else if (dig)
-                break;
-        }
-        return ret;
+        return Long.parseLong(READER.readLine());
     }
 }
