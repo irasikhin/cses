@@ -21,6 +21,6 @@ public class WeirdAlgorithmProblemSolver {
     }
 
     private static long readLong() throws IOException {
-        return Long.parseLong(READER.readLine());
+        return Long.parseLong(READER.readLine(), 10);
     }
 }
