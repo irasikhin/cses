@@ -3,15 +3,17 @@ import java.io.IOException;
 public class WeirdAlgorithmProblemSolver {
     public static void main(String[] args) throws IOException {
         var input = readLong();
-        System.out.print(input);
+        var builder = new StringBuilder();
+        builder.append(input);
         while (input != 1L) {
-            if (input % 2L == 0) {
-                input = input >> 1;
+            if (input % 2L == 0L) {
+                input = input / 2L;
             } else {
-                input = (input << 1) + input + 1L;
+                input = (input * 3L) + 1L;
             }
-            System.out.print(" " + input);
+            builder.append(" ").append(input);
         }
+        System.out.print(builder);
     }
 
     private static long readLong() throws IOException {
